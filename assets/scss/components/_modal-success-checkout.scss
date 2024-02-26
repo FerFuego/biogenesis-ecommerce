@@ -1,0 +1,47 @@
+.success-checkout {
+
+    &__container {
+
+        // Mobile
+        @include respond-to('sm') {
+            padding: 70px 27px;    
+        }
+    }
+
+    &__icon-container {
+
+        img {
+            // Mobile
+            @include respond-to('sm') {
+                max-width: 46px;
+            }
+        }
+    }
+
+    &.active {
+        display: none;
+    }
+    &.active.from-checkout {
+        display: flex; justify-content: center; align-items: center;
+        position: fixed; top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background-color: rgba($black, .6);
+    }
+
+    &__btn-container {
+
+        // Mobile
+        @include respond-to('sm') {
+            margin-top: 72px;
+        }
+    }
+    
+    &__btn {
+        min-width: 207px;
+
+        // Mobile
+        @include respond-to('sm') {
+            min-width: 197px;
+        }
+    }
+}

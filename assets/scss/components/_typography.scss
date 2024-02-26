@@ -1,0 +1,183 @@
+$component__typography__color: $black !default;
+$component__typography__font: $font !default;
+$component__typography__heading_font: $font--heading !default;
+$component__typography__code__font: $font !default;
+$component__typography__pre__font: $font !default;
+
+body{
+	color: $component__typography__color;
+	font-family: $component__typography__font;
+	background-color: map-get( $background-colors, 'gray' );
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $component__typography__heading_font;
+}
+
+p {
+	margin-bottom: rem-calc( 0 0 16 );
+
+	font-weight: map-get( $font-weights, 'light' );
+	font-size: rem-calc( 16 );
+	line-height: rem-calc( 20 );
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+}
+
+pre {
+	margin-bottom: rem-calc( 0 0 16 );
+	padding: rem-calc( 16 );
+	max-width: 100%;
+
+	font-family: $component__typography__pre__font;
+	font-size: rem-calc( 16 );
+	line-height: rem-calc( 20 );
+}
+
+code, kbd, tt, var {
+	font-family: $component__typography__pre__font;
+	font-size: rem-calc( 16 );
+}
+
+.prehead {
+	font-family: $font-secondary;
+	font-size: 22px;
+	line-height: 34px;
+	font-weight: map-get( $font-weights, 'medium' );
+	color: $white-2;
+	margin-bottom: 12px;
+	display: inline-block;
+
+	&--secondary-state {
+		color: $blue;
+		font-family: $font;
+		font-weight: map-get( $font-weights, 'semi-bold' );
+		font-size: 15px;
+		line-height: 20px;
+		letter-spacing: 1.35px;
+		text-transform: uppercase;
+	}
+
+	// Mobile
+	@include respond-to(md) {
+		font-size: 16px;
+		line-height: 30px;
+	}
+}
+
+.title {
+	color: $black;
+	font-family: $font--heading;
+	font-weight: map-get( $font-weights, 'regular' );
+	text-align: center;
+
+	font-size: rem-calc( 39 );
+	line-height: rem-calc( 39 );
+	letter-spacing: 0;
+}
+
+.title-xl {
+	font-size: 50px;
+	line-height: 75px;
+	font-weight: map-get( $font-weights, 'medium' );
+	font-family: $font-secondary;
+	color: $black-3;
+
+	// Mobile
+	@include respond-to('md') {
+		font-size: 22px;
+		line-height: 33px;
+	}
+}
+
+.title-l {
+	font-family: $font-secondary;
+	font-weight: map-get( $font-weights, 'heavy');
+	font-size: 45px;
+	line-height: 50px;
+	color: $white;
+	margin-bottom: 20px;
+
+	// Mobile
+	@include respond-to(md) {
+		font-size: 35px;
+		line-height: 40px;
+	}
+	@include respond-to('sm') {
+		font-size: 24px;
+		line-height: 30px;	
+	}
+}
+
+.title-m {
+	font-family: $font-secondary;
+	font-weight: map-get( $font-weights, 'medium');
+	font-size: 35px;
+	line-height: 53px;
+	color: $black-2;
+	margin-bottom: 55px;
+	text-align: center;
+
+	// Mobile
+	@include respond-to(md) {
+		font-size: 22px;
+		line-height: 33px;
+		margin-bottom: 24px;
+	}
+}
+
+.title-s {
+	font-family: $font-secondary;
+	font-weight: map-get( $font-weights, 'bold');
+	font-size: 30px;
+	line-height: 42px;
+	color: $black-3;
+
+	// Mobile
+	@include respond-to(md) {
+		font-size: 22px;
+		line-height: 33px;
+		font-weight: map-get( $font-weights, 'medium');
+	}
+}
+
+.title-xs {
+	font-family: $font-secondary;
+	font-size: 24px;
+	line-height: 37px;
+	font-weight: map-get( $font-weights, 'bold' );
+	color: $black-3;
+
+	// Mobile
+	@include respond-to('sm') {
+		font-size: 20px;
+		line-height: 31px;
+		font-weight: map-get( $font-weights, 'medium');
+	}
+}
+
+.wysiwyg {
+	p {
+		font-family: $font;
+		font-weight: map-get( $font-weights, 'regular' );
+		font-size: 18px;
+		line-height: 25px;
+		text-align: center;
+
+		@include respond-to(md) {
+			font-size: 16px;
+			line-height: 23px;
+		}
+	}
+}
+
+.wysiwyg--ptag{
+	color: $black;
+	font-weight: map-get( $font-weights, 'regular' );
+
+	font-size: rem-calc( 16 );
+	line-height: rem-calc( 24 );
+	letter-spacing: 0;
+}

@@ -1,0 +1,167 @@
+{
+    "key": "group_5ff4b0145d06b",
+    "title": "Page: Home",
+    "fields": [
+        {
+            "key": "field_5ff4b049469ff",
+            "label": "",
+            "name": "home__flexible-content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5ff4b0695ce81": {
+                    "key": "layout_5ff4b0695ce81",
+                    "name": "hero",
+                    "label": "Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ff4b07446a00",
+                            "label": "Hero",
+                            "name": "hero",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ff4ae2ba66a2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ff5afb8665b5": {
+                    "key": "layout_5ff5afb8665b5",
+                    "name": "products_grid",
+                    "label": "Grid Productos",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ff5afb8665b6",
+                            "label": "Products Grid",
+                            "name": "products_grid",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ff5af467595b"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ff869f4de99a": {
+                    "key": "layout_5ff869f4de99a",
+                    "name": "related_products",
+                    "label": "Productos Relacionados",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ff869f4de99b",
+                            "label": "Related Products",
+                            "name": "related_products",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ffc61e7a8ab8"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ff5e0bc77bc0": {
+                    "key": "layout_5ff5e0bc77bc0",
+                    "name": "cta_box",
+                    "label": "CTA Box",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ff5e0bc77bc1",
+                            "label": "Cta Box",
+                            "name": "cta_box",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ff5dfb9e9527"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/page-home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1614087565
+}

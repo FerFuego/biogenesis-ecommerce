@@ -1,0 +1,74 @@
+{
+    "key": "group_6022b4ead2c66",
+    "title": "Page: Todos los productos",
+    "fields": [
+        {
+            "key": "field_6022b5a121350",
+            "label": "",
+            "name": "all-products__flexible-content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_6022b5b80606c": {
+                    "key": "layout_6022b5b80606c",
+                    "name": "all_products_grid",
+                    "label": "All Products Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6022b6b0e3a18",
+                            "label": "Todos los productos (grid)",
+                            "name": "all_products_grid",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6022b6255a799"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/page-all-products.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1614087635
+}

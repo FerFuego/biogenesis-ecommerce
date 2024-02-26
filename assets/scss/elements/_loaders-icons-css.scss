@@ -1,0 +1,177 @@
+// Loading
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 20px 20px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 3.5px;
+    height: 3.5px;
+    border-radius: 50%;
+    background: $blue;
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 31.5px;
+    left: 31.5px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 34px;
+    left: 28px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 35.5px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 36px;
+    left: 20px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 35.5px;
+    left: 16px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 34px;
+    left: 12px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 31.5px;
+    left: 8.5px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 28px;
+    left: 6px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+// Added
+$icon-base-size: 6px;
+
+// Structure
+.added-icon {
+    display: inline-block;
+    width: 7em;
+    height: 7em;
+    font-size: $icon-base-size;
+    border-radius: 50%;
+    border: 2px solid $white;
+    background-color: $success;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+    animation: showSuccess 180ms ease-in-out;
+    transform: scale(1);
+}
+  
+// Elements
+.added-icon {
+
+    &__tip,
+    &__long {
+        display: block;
+        position: absolute;
+        height: 2px;
+        background-color: $white;
+        border-radius: 10px;
+    }
+
+    &__tip {
+        width: 2.4em;
+        top: 4em;
+        left: .9em;
+        transform: rotate(45deg);
+        animation: tipInPlace 300ms ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 180ms;
+        visibility: hidden;
+    }
+
+    &__long {
+        width: 4em;
+        transform: rotate(-45deg);
+        top: 3.4em;
+        left: 2.1em;
+        animation: longInPlace 140ms ease-in-out;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 300ms + 140ms;
+    }
+
+}
+
+@keyframes showSuccess {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes tipInPlace {
+    from {
+        width: 0em;
+        top: 0em;
+        left: -1.5em;
+    }
+    to {
+        width: 2.4em;
+        top: 4em;
+        left: .9em;
+        visibility: visible;
+    }
+}
+
+@keyframes longInPlace {
+    from {
+        width: 0em;
+        top: 4em;
+        left: 2.4em;
+    }
+    to {
+        width: 4em;
+        top: 3.4em;
+        left: 2.1em;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,209 @@
+.recovery {
+
+    &.success {
+
+        .recovery__container {
+
+            // Mobile
+            @include respond-to('sm') {
+                padding: 58px 16px 43px;
+            }
+        }
+
+        .recovery__input {
+            display: none;
+        }
+
+        .recovery__input-succes {
+            display: flex; 
+        }
+
+        .recovery__btn {
+            display: none;
+
+            &--success {
+                display: block;
+                background-color: $success;
+                color: $white;
+                border-color: $success;
+
+                &::before {
+                    background-color: $success;
+                    transform: none;
+                }
+
+                &:hover {
+                    background-color: $success;
+                    border-color: $success;
+                }
+            }
+        }
+        .recovery__try-again {
+            display: block;
+        }
+    }
+
+    &.error {
+        .recovery__input {
+            position: relative;
+
+            &::before,
+            &::after {
+                position: absolute; bottom: 0;  left: 0;
+            }
+
+            input {
+                border-color: $alert;
+
+                &::placeholder {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    #js-lostpass-message {
+        .text-danger{
+            display: flex;
+            align-items: center;
+        }
+        .text-danger::before {
+            content: url(../img/icons/error.svg);  
+            padding: 2px 10px 0 0;
+        }
+    }
+
+    .woocommerce-Input {
+         margin-bottom: 0; 
+    }
+
+    .woocommerce-notices-wrapper {
+        display: none;
+        margin-top: 20px;
+
+        .woocommerce-error {
+            li {
+                display: none;
+
+                &:first-child {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__container {
+
+        // Mobile
+        @include respond-to('sm') {
+            padding: 58px 16px 47px;
+        }
+    }
+
+    &__btn-container {
+    
+        // Mobile
+        @include respond-to('md') {
+            margin-top: 40px;
+        }
+    }
+
+    &__btn {
+        min-width: 234px;
+
+        &--success {
+            display: none;
+            color: $white;
+            background-color: $success;
+            border: 1px solid $success;
+            cursor: auto;
+
+            &:hover {
+                color: $white;
+                background-color: $success;
+                border: 1px solid $success;
+            }
+        }
+    }
+
+    &__input {
+
+        input {
+
+            &::placeholder {
+                opacity: 0;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: -.15;
+                padding: 10px 15px;
+            }
+        }
+    }
+
+    &__input-succes {
+        display: none;
+        position: relative;
+        background-color: #EEF9FF;
+        padding: 20px 36px;
+        border-radius: 15px;
+
+        &::after {
+            content: url('../img/icons/arrow-down--light-blue.svg');
+            position: absolute; bottom: 0; left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+        h4 {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: .2px;
+            font-family: $font;
+            color: $black-3;
+            text-align: center;
+
+            span {
+                font-weight: map-get($font-weights, 'semi-bold');
+                color: $blue;
+                transition: linear .3s;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: .7;
+                    transition: linear .3s;
+                }
+
+                // Mobile
+                @include respond-to('sm') {
+                    display: block;   
+                }
+            }
+        }
+    }
+
+    &__try-again {
+        display: none;
+        font-size: 17px;
+        line-height: 25px;
+        font-family: $font;
+        color: $black-3;
+        text-align: center;
+        margin-top: 46px;
+
+        // Mobile
+        @include respond-to('sm') {
+            margin-top: 16px;
+        }
+
+        span {
+            font-weight: map-get($font-weights, 'bold');
+            color: $blue;
+            transition: $global-transition;
+
+            &:hover {
+                opacity: .7;
+                cursor: pointer;
+                transition: $global-transition;
+            }
+        }
+    }
+}

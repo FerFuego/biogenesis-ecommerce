@@ -1,0 +1,29 @@
+.button-group{
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+
+	&--align-left{
+		justify-content: flex-start;
+	}
+
+	&--align-center{
+		justify-content: center;
+	}
+
+	&--align-right{
+		justify-content: flex-end;
+	}
+
+	.button{
+		margin-right: rem-calc( 24 );
+		margin-bottom: rem-calc( 16 );
+
+		&:last-of-type{
+			margin-right: 0;
+			margin-bottom: 0;
+		}
+	}
+}

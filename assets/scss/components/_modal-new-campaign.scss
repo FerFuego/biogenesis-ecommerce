@@ -1,0 +1,20 @@
+.new-campaign-banner {
+
+    &__container {
+        max-height: 640px;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    &__close-btn {
+        
+        &::before,
+        &::after {
+            background-color: $white;
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+    }
+}

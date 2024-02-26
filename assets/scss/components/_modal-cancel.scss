@@ -1,0 +1,40 @@
+.cancel-modal {
+
+    &__container {
+        padding: 70px 68px;
+    }
+
+    &__icon-container {
+
+        img {
+            // Mobile
+            @include respond-to('sm') {
+                max-width: 41px;
+            }
+        }
+    }
+
+    &__btn-container {
+        
+        // Mobile
+        @include respond-to('sm') {
+            flex-wrap: wrap;
+            margin-top: 88px;
+        }
+    }
+
+    &__btn {
+
+        // Mobile
+        @include respond-to('sm') {
+            width: 208px;
+            padding: 14px 22px;
+
+            &--gray {
+                order: 2;
+                margin-top: 16px; margin-right: 0;
+                text-align: center;
+            }
+        }
+    }
+}

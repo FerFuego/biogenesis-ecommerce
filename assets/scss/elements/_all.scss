@@ -1,0 +1,83 @@
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+abbr, acronym {
+	cursor: help;
+}
+
+address {
+	margin: rem-calc( 0 0 16 );
+}
+
+big {
+	font-size: 125%;
+}
+
+blockquote {
+	margin: rem-calc( 0 16 );
+}
+
+body {
+	background: $white;
+}
+
+em, i, cite, dfn {
+	font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+hr {
+	color: $black;
+	background-color: $black;
+	border: 0;
+	height: 1px;
+	margin-bottom: rem-calc( 0 0 16 );
+}
+
+html {
+	box-sizing: border-box;
+}
+
+mark, ins {
+	text-decoration: none;
+}
+
+small{
+	font-size: 50%;
+}
+
+strong, b{
+	font-weight: map-get( $font-weights, 'bold' );
+}
+
+sub{
+	font-size: 50%;
+	line-height: 0;
+	vertical-align: sub;
+}
+
+sup{
+	font-size: 50%;
+	line-height: 0;
+	vertical-align: super;
+}
+
+@import "buttons";
+@import "forms";
+@import "links";
+@import "lists";
+@import "media";
+@import "svgs";
+@import "tables";
+@import "wave";
+@import "go-back";
+@import "hamburger-menu";
+@import "plus-and-trash";
+@import "loaders-icons-css";
+@import "ajax-spinner";

@@ -1,0 +1,247 @@
+.c-navbar {
+
+    &__container {
+        position: relative; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+    }
+
+    &__logo {
+        width: auto; max-width: 200px !important;
+        max-height: 70px;
+        display: none;
+
+        // Mobile
+        @include respond-to('md') {
+            max-width: 140px !important;
+        }
+
+        &--black {
+            display: block;
+        }
+    }
+
+    &__menu {
+        position: relative; z-index: 300;
+    }
+
+    &__menu-container {
+        .menu {
+            display: flex;
+
+            .menu-item {
+                margin: 0;
+                margin-right: 42px;
+
+                // Mobile
+                @include respond-to(md) {
+                    margin-right: 16px;
+                }
+
+                // Reportes
+                &.reports-access {
+                    display: none;
+                }
+
+                // Cart
+                &.cart {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('../img/elements/cart.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+
+                    &::before {
+                        content: url(../img/navbar/dropdown_arrow-down.svg);
+                        position: absolute; top: 50%; right: -18px;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                    }
+
+                    // Mobile
+                    @include respond-to('xl') {
+                        margin-right: 20px;
+                    }
+
+                    a {
+                        position: relative;
+                        z-index: 1;
+                        color: transparent;
+
+                        &.full::after {
+                            content: '';
+                            position: absolute; top: -7px; right: 0; left: initial;
+                            width: 12px; height: 12px;
+                            background-color: $alert-2;
+                            border-radius: 50%;
+                        }
+
+                        &.full:hover::after {
+                            width: 12px;
+                        }
+
+                        &:hover::after {
+                            width: 0;
+                        }
+                    }
+                }
+
+                //With Dropdown
+                &.w-dropdown {
+                    
+                    a {
+                        &::before {
+                            content: url(../img/navbar/dropdown_arrow-down.svg);
+                            position: absolute; top: 50%; right: -18px;
+                            transform: translateY(-50%);
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                // Active Page
+                a[aria-current="page"] {
+                    border-bottom: 1px solid $black-2;
+                }
+
+                // DisplayNone Mobile
+                &.dn-mobile {
+                    @include respond-to('sm') {
+                        display: none;
+                    }
+                }
+
+                a {
+                    position: relative;
+                    font-family: $font;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0.2px;
+                    font-weight: map-get($font-weights, 'regular');
+                    color: $black-3;
+                    padding-bottom: 4px;
+
+                    &::after {
+                        content: '';
+                        position: absolute; bottom: -1px; left: 50%;
+                        width: 0; height: 1px;
+                        background-color: $black-2;
+                        transition: $global-transition;
+                    }
+
+                    &:hover::after {
+                        left: 0;
+                        width: 100%;
+                        transition: $global-transition;
+                    }
+                }
+            }
+        }
+    }
+
+    &__menu-desktop {
+        position: relative;
+        
+        @include respond-to(md) {
+            display: none;
+        }
+    }
+    
+    &__menu-mobile {
+        transition: all .5s ease;
+        display: none;
+        padding: 0;
+        position: relative; 
+
+        // Mobile
+        @include respond-to(md) {
+            display: flex;
+        }
+
+        .menu {
+            text-align: center;
+        }
+    }
+}
+
+.logged-in {
+
+	.site-header.active { 
+
+        .c-navbar {
+
+            .c-navbar__logo {
+                display: none;
+                
+                &--black {
+                    display: block;
+                }
+            }
+
+            .c-navbar__container {
+                transition: $global-transition;
+            }
+
+            .c-navbar__menu-container {
+                .menu {
+                    .menu-item {
+    
+                        &.cart {
+
+                            &::after {
+                                background-image: url('../img/elements/cart.svg');
+                            }
+
+                            a {
+                                color: transparent;
+                            }
+                        }
+
+                        a {
+                            color: $black-2;
+                        }
+                    }
+                }
+            }
+
+            .mini-cart {
+                top: 70px;
+            }
+        }
+	}
+}
+
+.admin,
+.vendedor-tecnico {
+
+    .c-navbar {
+        &__menu-container {
+            .menu {
+                .menu-item {
+
+                    &.reports-access {
+                        display: block;
+
+                        // Mobile
+                        @include respond-to('sm') {
+                            display: none;   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.module--video{
+
+	color: $white;
+
+	.col{
+		padding: rem-calc( 75 29 );
+		position: relative;
+
+		background: transparent 50% 50% no-repeat;
+		background-size: cover;
+
+		&:before{
+			content: '';
+			background: rgba( $primary, 0.47 );
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+		}
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+		max-width: 80%;
+		margin: 0 auto;
+
+		@include respond-above( map-get( $grid-breakpoints, 'md' ) ){
+			max-width: 85%;
+		}
+
+		@include respond-above( map-get( $grid-breakpoints, 'lg' ) ){
+			padding: rem-calc( 25 0 0);
+			min-height: rem-calc( 350 );
+			max-width: 90%;
+		}
+	}
+
+	.title{
+		margin-bottom: rem-calc( 15 );
+		font-weight: map-get( $font-weights, 'regular' );
+		color: $white;
+		letter-spacing: 0;
+		text-align: center;
+
+		font-size: rem-calc( 37.5 );
+		line-height: rem-calc( 39 );
+		@include respond-above( map-get( $grid-breakpoints, 'lg' ) ){
+			font-size: rem-calc( 52 );
+			line-height: rem-calc( 52 );
+		}
+	}
+
+	&__description{
+		margin-bottom: rem-calc( 35 );
+
+		font-size: rem-calc(20);
+		letter-spacing: 0;
+		text-align: center;
+		line-height: rem-calc( 24 );
+	}
+
+	&__play{
+		background: url(../img/pulse-rings.gif) 50% 50% no-repeat;
+		background-size: cover;
+		width: rem-calc( 120 );
+		height: rem-calc( 120 );
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&__button{
+			border-radius: 100%;
+			border: none;
+			background: $blue;
+			width: rem-calc( 47 );
+			height: rem-calc( 47 );
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			padding: 0;
+
+			svg{
+				width: rem-calc( 20 );
+				margin-left: rem-calc( 3 );
+			}
+
+			&:hover{
+				background: lighten( $blue, 10% );
+				border-radius: 100%;
+			}
+			&:focus{
+				outline: none;
+			}
+		}
+	}
+}

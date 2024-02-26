@@ -1,0 +1,342 @@
+.sign-up {
+
+  &__grid {
+    display: flex;
+    position: relative;
+    width: 80%;
+    max-width: 1100px;
+
+    @include respond-to('md') {
+      width: 100%;
+    }
+  }
+
+  &__container {
+    position: initial;
+    border-radius: 25px;
+    width: 58%;
+    max-height: initial;
+
+    // Mobile
+    @include respond-to(md) {
+      width: 100%;
+      padding: 32px 16px;
+    }
+  }
+
+  &__image {
+    width: 42%;
+    height: auto;
+    border-radius: 0 25px 25px 0;
+    background-size: cover;
+    background-position: center;
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  &__social-plugin {
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    &.error {
+      color: #CF424B
+    }
+  }
+
+  .field input.error {
+    border-color: #CF424B
+  }
+
+  &__sub-title {
+    font-family: $font;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .2px;
+    color: $black-3;
+
+    // Mobile
+    @include respond-to('md') {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    font-family: $font;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: $black-3;
+    text-align: center;
+    max-width: 330px;
+    margin: 0 auto 30px;
+
+    // Mobile
+    @include respond-to('md') {
+      margin: 0 auto 64px;
+    }
+  }
+
+  input[type="password"] {
+    padding: 10px 45px 10px 15px !important;
+  }
+
+  &__terms-and-conditions {
+    display: flex; justify-content: flex-start; align-items: center;
+    margin-top: 10px;
+
+    input,
+    label {
+      margin-top: 0;
+      margin-bottom: 0 !important;
+      &.error {
+        color: #CF424B
+      }  
+    }
+
+    input {
+      margin-top: 0px;
+      width: 20px; height: 20px;
+      &.error {
+        color: #CF424B
+      }  
+    }
+  }
+
+  &__terms-and-conditions-copy {
+    text-align: start;
+    font-size: 15px;
+    font-family: $font;
+    font-weight: map-get( $font-weights, 'regular' );
+    line-height: 20px;
+    color: $grey-3;
+    margin-left: 13px;
+    
+    // Mobile 
+    @include respond-to('sm') {
+      max-width: 210px;
+      margin-left: 8px;
+    }
+
+    a {
+      font-weight: map-get( $font-weights, 'bold' );
+      text-decoration: underline;
+    }
+  }
+
+  &__first-step {
+    text-align: center;
+  }
+
+  &__second-step {
+    display: none;
+  }
+
+  &__bottom-cta {
+    text-align: center;
+    font-family: $font;
+    font-size: 14px;
+    line-height: 25px;
+    color: $black-3;
+
+    a {
+      font-weight: map-get( $font-weights, 'bold' );
+      color: $blue;
+    }
+  }
+
+  &__submit-container {
+    flex-wrap: wrap;
+    justify-content: space-around !important;
+
+    // Mobile
+    @include respond-to('sm') {
+      margin: 37px 0 0;
+    }
+  }
+
+  .btn-container {
+    margin-bottom: 0 !important;
+  }
+
+  &__submit {
+    position: relative;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: .2px;
+    font-weight: map-get($font-weights, 'semi-bold');
+    width: 234px; height: 65px !important; max-width: none !important;
+    margin-bottom: 0 !important;
+    z-index: 1;
+		overflow: hidden;
+    opacity: 1 !important;
+    display: flex; justify-content: center; align-items: center;
+    border: 1px solid $blue;
+    margin-bottom: 20px !important;
+    margin-top: 31px;
+    // Mobile
+    @include respond-to('sm') {
+      margin-top: 0;
+    }
+    &.loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: transparent !important;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.loading:after {
+      content: " ";
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      border-color: #fff transparent #fff transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $white;
+			width: 100%;
+			height: 100%;
+			transform: translateX(-110%) skew(-25deg);
+			transition: all .3s linear;
+			z-index: -1;
+		}
+
+    /* BTN EFFECT
+    &:hover {
+      background-color: $white !important;
+      color: $blue !important;
+      border: 1px solid $blue !important;
+      transition: $global-transition;
+
+      &::before {
+				transform: translateX(0%) skew(-25deg) scale(1.05);
+			}
+    } */
+
+    // Mobile
+    @include respond-to('sm') {
+      width: 144px; height: 45px !important;
+      margin-bottom: 16 !important;
+    }
+  }
+
+  &__skip {
+    padding: 15px;
+    border: 1px solid $grey;
+    color: $black-3;
+    background-color: $white;
+    transition: $global-transition;
+    display: flex; align-items: center;
+    opacity: 1 !important;
+
+    &::before {
+			background-color: $black-3;
+		}
+
+    &:hover {
+      background-color: $black-3;
+      color: $white !important;
+      border: 1px solid $black-3 !important;
+      transition: $global-transition;
+    }
+
+    // Mobile
+    @include respond-to('sm') {
+      padding: 16px 18px !important;
+      order: 2;
+      width: 216px;
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+  .field-password {
+    position: relative;
+  }
+  &__change-view {
+    cursor: pointer;
+    background-image: url('../img/icons/close-eye.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 30px;
+    height: 30px !important;
+    right: 8px;
+    top: 38px;
+    z-index: 10;
+    &.active {
+      background-image: url('../img/icons/open-eye.svg');
+      background-repeat: no-repeat;
+    }
+  }
+
+  .error-message {
+    margin: 15px auto 0;
+    text-align: center;
+    .success {
+      color: #20a33c;
+    }
+    .error {
+      color: $alert;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // Mobile
+      @include respond-to('sm') {
+        justify-content: flex-start;
+        text-align: left;
+      }
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__form-second-step {
+    display: flex; flex-wrap: wrap;
+
+    .field {
+      width: 100%;
+    }
+    .field-cuit,
+    .field-renspa {
+      width: 48%;
+
+      // Mobile
+      @include respond-to('sm') {
+        width: 100%;
+      }
+    }
+    .field-cuit {
+      margin-right: 2%;
+
+          // Mobile
+          @include respond-to('sm') {
+            margin-right: 0;
+          }
+    }
+  }
+}

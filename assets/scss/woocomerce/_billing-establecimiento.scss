@@ -1,0 +1,31 @@
+.billing-establecimiento {
+    margin-bottom: 60px;
+
+    &__header {
+        width: 100%;
+        display: flex;
+    }
+
+    &__delete-btn {
+        transition: .3s linear;
+        font-weight: map-get($font-weights, 'semi-bold');
+
+        &:hover {
+            cursor: pointer;
+            color: $primary;
+            transition: .3s linear;
+        }
+    }
+
+    &__add-new {
+        padding: 10px 20px;
+        margin-right: 20px;
+        
+        // Mobile
+		@include respond-to('sm') {
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+		}
+    }
+}

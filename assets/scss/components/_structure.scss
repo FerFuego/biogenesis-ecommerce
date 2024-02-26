@@ -1,0 +1,54 @@
+$grid-gutter-width: 20px !default;
+$mobile-outside-gutter-width: 30px !default;
+
+.site{
+
+	.site-header{
+
+	}
+
+	.site-content{
+		position: relative;
+
+		.content-area{
+
+			.site-main{
+
+			}
+
+		}
+
+		.widget-area{
+
+		}
+
+	}
+
+	.site-footer{
+
+	}
+
+}
+
+.container{
+	padding-left: $mobile-outside-gutter-width;
+	padding-right: $mobile-outside-gutter-width;
+
+	@include respond-above( 'lg' ){
+		padding-left: $grid-gutter-width / 2;
+		padding-right: $grid-gutter-width / 2;
+	}
+}
+
+@each $prefix, $size in $grid-breakpoints{
+	.container-#{$prefix}{
+		padding-left: $mobile-outside-gutter-width;
+		padding-right: $mobile-outside-gutter-width;
+
+		@include respond-above( 'lg' ){
+			max-width: 1200px;
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+		}
+	}
+}

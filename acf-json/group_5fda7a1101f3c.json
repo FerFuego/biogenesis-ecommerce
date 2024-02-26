@@ -1,0 +1,155 @@
+{
+    "key": "group_5fda7a1101f3c",
+    "title": "Page: ¿Cómo Funciona?",
+    "fields": [
+        {
+            "key": "field_602d357f1d114",
+            "label": "Título Página",
+            "name": "how-it-works__page-title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fda7a26b1f6f",
+            "label": "Contenido Flexible",
+            "name": "how-it-works__flexible-content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5fda7c8a74db3": {
+                    "key": "layout_5fda7c8a74db3",
+                    "name": "left_right",
+                    "label": "Left \/ Right",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5fda7ca4b1f70",
+                            "label": "Left \/ Right",
+                            "name": "left_right",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e4452cde62aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6026a295d4290": {
+                    "key": "layout_6026a295d4290",
+                    "name": "btn-container",
+                    "label": "Botón (Sección)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6026a2a6d4291",
+                            "label": "Botón (Sección)",
+                            "name": "btn-container",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6026a209bf192"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6026a76a5a3ac": {
+                    "key": "layout_6026a76a5a3ac",
+                    "name": "faq",
+                    "label": "Preguntas Frecuentes",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6026a7745a3ad",
+                            "label": "Preguntas Frecuentes",
+                            "name": "faq",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5fd7ee5baf993"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/page-como-funciona.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1614087611
+}

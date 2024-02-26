@@ -1,0 +1,65 @@
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: rem-calc( 16 );
+	margin-bottom: rem-calc( 16 );
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: rem-calc( 16 );
+	margin-bottom: rem-calc( 16 );
+}
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+	margin-bottom: rem-calc( 16 );
+}
+
+.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.wp-caption {
+	margin-bottom: rem-calc( 16 );
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: rem-calc( 16 0 );
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.gallery {
+	margin-bottom: rem-calc( 16 );
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			max-width: percentage( 100 / $i );
+		}
+	}
+}
+
+.gallery-caption {
+	display: block;
+}

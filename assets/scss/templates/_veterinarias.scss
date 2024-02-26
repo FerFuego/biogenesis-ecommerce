@@ -1,0 +1,306 @@
+.veterinarias {
+    margin-top: $header-height;
+    padding-top: 40px; padding-bottom: 135px;
+
+    // Mobile
+    @include respond-to('md') {
+        padding-top: 0; 
+    }
+
+    &__title {
+        color: $black-3;
+        margin-bottom: 40px; 
+
+        // Mobile
+        @include respond-to('md') {
+            margin-bottom: 24px;
+        }
+    }
+
+    
+    &__subtitle {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: map-get($font-weights, 'regular');
+        font-family: $font;
+        color: $black-3;
+        max-width: 945px;
+        margin-bottom: 40px;
+
+        // Mobile
+        @include respond-to('md') {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__select-container {
+        display: flex; flex-wrap: wrap;
+        margin-bottom: 26px;
+    }
+
+    input,
+    select {
+        background-color: $white;
+        border-radius: 5px;
+        border: 1px solid $light-grey;
+        font-family: $font;
+        font-size: 18px;
+        line-height: 25px;
+        color: $black-3;
+        padding: 12px 15px;
+    }
+
+    select {
+        -webkit-appearance: none;
+        background-image: url('../img/icons/arrow-select.svg');
+        background-repeat: no-repeat;
+        background-position: 97% 50%;
+        max-width: 465px;
+        margin-right: 15px;
+
+        &::placeholder {
+            color: transparent !important;
+        }
+
+        // Mobile
+        @include respond-to('md') {
+            width: 100%; max-width: none;
+            margin-right: 0; margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            option {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .vet-search {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+
+        &::before {
+            content: url('../img/icons/search-mag-glass.svg');
+            position: absolute; top: 52px; left: 15px;
+            z-index: 1000;
+        }
+
+        &.active {
+            &::before {
+                display: none;
+            }
+        }
+
+        &__mask {
+            top: 80px;
+        }
+
+        &__overlay {
+            top: 80px; left: 0;
+            width: 100%; max-width: 945px;
+        }
+
+        &__input {
+            font-size: 18px;
+            line-height: 25px;
+            max-width: 945px;
+
+            &::placeholder {
+                padding-left: 25px;
+            }
+        }
+    }
+
+    &__filter-title {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: map-get($font-weights, 'medium');
+        font-family: $font-secondary;
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+    .map {
+        height: 500px;
+    }
+
+    // Listado
+    &__table {
+        position: relative;
+    }
+
+    &__mask {
+        display: none;
+        position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 1000;
+        background-color: rgba($white, .5);
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .spinner {
+        display: none;
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999999;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__table-body {
+        max-height: 640px;
+        overflow: auto;
+
+        // Custom Scrollbar
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #E5E5E5;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #818181;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #686868;
+        }
+    }
+
+    &__table-header,
+    &__table-row {
+        display: flex;
+        width: 100%;
+        padding: 20px;
+
+        p {
+            width: 20%;
+            padding-right: 20px;
+            color: $black-3;
+
+            &:first-child {
+                width: 40%;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__table-header {
+        background-color: $grey-7;
+
+        p {
+            font-size: 18px;
+            line-height: 27px;
+            font-weight: map-get($font-weights, 'medium');
+            font-family: $font-secondary;
+        }
+
+        // Mobile
+        @include respond-to('md') {
+            display: none;
+        }
+    }
+
+    &__table-row {
+
+        &:nth-child(odd) {
+            background-color: $white;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        // Mobile
+        @include respond-to('md') {
+            flex-wrap: wrap;
+
+            p {
+                width: 100%;
+
+                &:first-child {
+                    width: 100%;
+                    margin-bottom: 8px;
+                }
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: $grey-3;
+                }
+                &:nth-child(2) {
+                    width: max-content;
+                    order: 3;
+                }
+                &:nth-child(3) {
+                    width: max-content;
+                    padding-right: 5px;
+                    order: 2;
+
+                    &::after {
+                        content: ',';
+                    }
+                }
+                &:nth-child(4) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__change-view {
+        position: relative; z-index: 1;
+        color: $white;
+        font-size: 15px;
+        line-height: 25px;
+        font-family: $font;
+        font-weight: map-get( $font-weights, 'semi-bold' );
+        width: max-content;
+        padding: 10px 24px;
+        border: 1px solid $blue;
+        background-color: $blue;
+        border-radius: 50px;
+        margin-top: 30px;
+        overflow: hidden;
+        transition: $global-transition;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: $white;
+          width: 100%;
+          height: 100%;
+          transform: translateX(-110%) skew(-25deg);
+          transition: all .3s linear;
+          z-index: -1;
+        }
+
+        &:hover {
+            color: $blue;
+            transition: $global-transition;
+            cursor: pointer;
+
+            &:before {
+              transform: translateX(0%) skew(-25deg) scale(1.05);
+            }
+        }
+
+        // Mobile
+        @include respond-to('md') {
+            margin: 30px auto 0;
+        }
+    }
+}

@@ -1,0 +1,291 @@
+// Form
+.woocommerce-EditAccountForm,
+.woocommerce-checkout {
+
+  .entry-content {
+    padding-top: 150px;
+
+    @include respond-to(md) {
+      padding-top: 100px;
+    }
+  }
+
+  .entry-title {
+    display: none;
+  }
+
+  .title-xs {
+    margin-bottom: 16px;
+  }
+
+  .form-row-first,
+  .form-row-last {
+    width: 49% !important;
+  }
+ 
+  .form-row {
+    margin-bottom: 16px !important;
+
+    input,
+    select {
+      background-color: $white;
+      border-radius: 5px;
+      border: 1px solid $light-grey;
+      font-family: $font;
+      font-size: 16px;
+      line-height: 24px !important;
+      color: $black-3;
+      padding: 12px 15px;
+
+      &::placeholder {
+        color: $light-grey-2 !important;
+      }
+    }
+
+    select {
+      -webkit-appearance: none;
+      background-image: url('../img/icons/arrow-select.svg');
+      background-repeat: no-repeat;
+      background-position: 97% 50%;
+    }
+
+    label {
+      color: $dark-grey;
+      font-size: 18px !important;
+      line-height: 27px !important;
+      font-weight: map-get($font-weights, 'regular');
+      color: $grey-3;
+      margin-bottom: 8px !important;
+
+      // Mobile
+      @include respond-to('md') {
+        font-size: 14px !important;
+        line-height: 22px !important;
+      }
+      @include respond-to('sm') {
+        font-size: 16px !important;
+        line-height: 24px !important;
+      }
+
+
+      .required {
+        color: $grey-3;
+        font-size: 18px;
+        line-height: 27px !important;
+        font-weight: map-get($font-weights, 'regular');
+      }
+    }
+
+
+
+    &--wide {
+      width: 100% !important;
+    }
+
+    // Extra Small Input
+    &--extra-small {
+      width: 30.5% !important;
+
+      @include respond-to(md) {
+        width: 100% !important;
+      }
+    }
+
+    // Small Input
+    &--small {
+      width: 32.5% !important;
+
+      @include respond-to(md) {
+        width: 100% !important;
+      }
+    }
+
+    // Large Input
+    &--large {
+      width: 100% !important;
+    }
+
+    // Medium Input
+    &--medium {
+      width: 66% !important;
+
+      @include respond-to(md) {
+        width: 100% !important;
+      }
+    }
+
+    // Renspa Input
+    &--renspa {
+      margin-right: auto !important;
+      margin-left: 15px !important;
+
+      @include respond-to(md) {
+        margin-left: initial !important;
+      }
+    }
+  }
+
+  // Hidden (optional)
+  .optional {
+    visibility: hidden !important;
+  }
+
+  // Error Alert
+  .woocommerce-invalid {
+    input {
+      &::placeholder {
+        color: $alert-2;
+      }
+    }
+  }
+}
+
+// Form My Account
+.my-account-form,
+.woocommerce-EditAccountForm {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 80px;
+  
+		// Mobile
+		@include respond-to('sm') {
+      margin-bottom: 40px;
+		}
+
+  .title-xs {
+    width: 100%;
+  }
+
+  &__sub-title {
+    margin-top: 30px;
+  }
+
+  .clear {
+    display: none;
+  }
+
+  // User Data
+  .my-account__form-user-data-container {
+    position: relative;
+    width: 100%;
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+
+    &-mask {
+      display: none;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1000;
+      background-color: rgba($white, .5);
+    }
+  
+    .spinner {
+      display: none;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999999;
+    }
+  }
+
+  // Billing Profiles
+  .my-account__form-billing-profiles-container {
+    position: relative;
+
+    // Mobile
+    @include respond-to('md') {
+        width: 100%;
+    }
+
+    &-mask {
+      display: none;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1000;
+      background-color: rgba($white, .5);
+    }
+  
+    .spinner {
+      display: none;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999999;
+    }
+  }
+
+  // Submit Btn
+  .edit-count-submit-btn {
+
+    // Mobile
+    @include respond-to('md') {
+      text-align: center;
+    }
+    @include respond-to('sm') {
+      margin: 16px auto 0;
+
+    }
+
+    button {
+      position: relative;
+      color: $white;
+      font-size: 15px;
+      line-height: 25px;
+      font-family: $font;
+      font-weight: map-get( $font-weights, 'semi-bold' );
+      padding: 10px 22px;
+      border: 1px solid $blue;
+      background-color: $blue;
+      border-radius: 50px;
+      z-index: 1;
+      overflow: hidden;
+      transition: $global-transition;
+
+      @include respond-to('sm') {
+        display: block;
+        width: 168px;
+        height: 47px
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $white;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-110%) skew(-25deg);
+        transition: all .3s linear;
+        z-index: -1;
+      }
+
+      &:hover {
+          color: $blue;
+          transition: $global-transition;
+
+          &:before {
+            transform: translateX(0%) skew(-25deg) scale(1.05);
+          }
+      }
+    }
+
+    &--datos {
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 30px;
+      .edit-count-submit-response {
+        font-size: 18px !important;
+        line-height: 27px !important;
+        font-weight: 400;
+        margin-bottom: 8px !important;
+      }
+    }
+  }
+}
+
+// Cupon
+.woocommerce-form-coupon-toggle {
+  display: none;
+}

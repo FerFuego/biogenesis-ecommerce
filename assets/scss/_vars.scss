@@ -1,0 +1,107 @@
+$white: #FFFFFF;
+$black: #000000;
+
+$primary: #4f89b2;
+$secondary: #4c6174;
+
+$white-2: #DFDFDF;
+
+$black-2: #181818;
+$black-3: #272727;
+$black-4: #222222;
+$black-5: #252525;
+$shadow-black: #454545;
+
+$light-grey: #E8E8E8;
+$light-grey-2: #D9D9D9;
+$grey: #CCCCCC;
+$grey-2: #858585;
+$grey-3: #535353;
+$grey-4: #929292;
+$grey-5: #B6B6B6;
+$grey-6: #A7A7A7;
+$grey-7: #E9E9E9;
+$grey-8: #F8F8F8;
+$grey-9: #8F8F8F;
+
+
+$dark-grey: #525252;
+
+$blue: #0069A6;
+$blue-2: #21B0E1;
+$blue-3: #0E1B43;
+
+$alert: #AE0A0A;
+$alert-2: #CF424B;
+
+$success: #00A62E;
+
+$greys: (
+	'light': #D3D3D3,
+	'regular': #808080,
+	'dark': #A9A9A9
+);
+$grays: $greys;
+
+$background-colors: (
+	'white': $white,
+	'black': $black,
+	'primary': $primary,
+	'secondary': $secondary,
+	'gray': #F9F9F9
+);
+
+$background-font-colors: (
+	'white': $primary,
+	'black': $white,
+	'primary': $white,
+	'secondary': $white
+);
+
+$icon-colors: (
+	'white': $white,
+	'black': $black,
+	'primary': $primary,
+	'secondary': $secondary
+);
+
+$button-colors: (
+	'white': $white,
+	'black': $black,
+	'primary': $primary,
+	'secondary': $secondary
+);
+
+$global-font-size: 16px;
+$font: "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, sans-serif;
+$font-secondary: "DaxlinePro", "Gill Sans MT", "Gill Sans", Corbel, Arial, sans-serif;
+$font--heading: "Century Gothic", AppleGothic, sans-serif;
+
+$font-weights: (
+	'light': 300,
+	'regular': 400,
+	'medium': 500,
+	'semi-bold': 600,
+	'bold': 700,
+	'heavy': 800
+);
+
+$global-transition: all 0.3s ease-in;
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1080px
+);
+
+$grid-gutter-width: 20px; //around each col (gets divided by 2)
+$mobile-outside-gutter-width: 30px; //on each side (both sides have this much)
+
+$padding-options: (
+	'none': 0,
+	'small': 25px,
+	'default': 50px,
+	'large': 100px,
+);
+

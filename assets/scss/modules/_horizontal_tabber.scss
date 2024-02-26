@@ -1,0 +1,124 @@
+.module--horizontal_tabber{
+
+	.mobile-button-container{
+		overflow-x: scroll;
+		-ms-overflow-style: none;
+	}
+
+	.tab-buttons{
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+		padding: 20px 0;
+		overflow-x: auto; overflow-y: hidden;
+		border-bottom: 1px solid map-get($greys, 'light');
+
+		// Mobile
+		@include respond-to( 'md' ){
+			padding: 4px 0;
+		}
+
+		button{
+			color: $black;
+			opacity: .3;
+			font-weight: map-get( $font-weights, 'regular' );
+			font-size: 16px;
+			font-weight: map-get($font-weights, 'semi-bold');
+			font-family: $font;
+			color: $black-2;
+			background: none;
+			border: none;
+			flex: 0 0 auto;
+			position: relative;
+			padding: 0;
+			margin-right: 36px;
+			text-decoration: none !important;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&:hover,
+			&:focus{
+				cursor: pointer;
+				opacity: .7;
+			}
+
+			&::after {
+				content: '';
+				position: absolute; bottom: -20px; left: 0;
+				width: 100%; height: 2px;
+				background-color: $black-2;
+				opacity: 0;
+				transition: $global-transition;
+
+				// Mobile
+				@include respond-to('md') {
+					bottom: -5px;
+				}
+			}
+
+			&[aria-selected="true"] {
+				opacity: 1;
+				text-decoration: underline;
+
+				&::after {
+					opacity: 1;
+					transition: $global-transition;
+				}
+
+				// Mobile
+				@include respond-above( 'md' ){
+					text-decoration: none;
+				}
+			}
+
+			// Mobie
+			@include respond-above( 'md' ){
+				text-align: center;
+				justify-content: center;
+			}
+			@include respond-to('md') {
+				margin-right: 56px;
+			}
+		}
+	}
+
+	.horizontal-tabs{
+		&.js-active{
+			.panel-container{
+				position: relative;
+				transition: $global-transition;
+				width: 100%;
+
+				.horizontal-tab-panel{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					transition: $global-transition;
+					transform: translateX( 0 );
+					opacity: 1;
+					outline: none;
+
+					&.transition{
+						transition: $global-transition;
+						transform: translateX( 100px );
+						opacity: 0;
+					}
+
+					ul {
+						list-style-type: square;
+						margin-bottom: 25px;
+
+						li {
+							margin-bottom: 5px;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+}

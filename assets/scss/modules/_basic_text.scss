@@ -1,0 +1,17 @@
+.module--basic_text{
+
+	&__inner{
+
+	}
+
+	.title{
+
+	}
+
+	.wysiwyg{
+		p{
+			@extend .wysiwyg--ptag;
+		}
+	}
+
+}

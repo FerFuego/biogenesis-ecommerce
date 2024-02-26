@@ -1,0 +1,67 @@
+.cta-box {
+  padding-bottom: 125px;
+  background-color: $white;
+
+  // Mobile
+  @include respond-to('md') {
+    padding-bottom: 0;
+  }
+
+  &__container {
+    max-width: 877px;
+
+    // Mobile
+    @include respond-to('md') {
+      padding: 0 !important; 
+    }
+  }
+
+  &__content {
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    padding: 66px 120px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    // Mobile
+    @include respond-to('md') {
+      border-radius: 0;
+    }
+    @include respond-to('sm') {
+      padding: 35px 30px;
+    }
+  }
+
+  &__icon {
+    max-width: 100px;
+
+    @include respond-to(md) {
+      max-width: 80px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-weight: map-get( $font-weights, 'medium' );
+    font-size: 40px;
+    line-height: 88px;
+    letter-spacing: 1px;
+    color: $white;
+
+    @include respond-to(md) {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 34px;
+    color: $white;
+  }
+}

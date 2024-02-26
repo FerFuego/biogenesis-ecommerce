@@ -1,0 +1,275 @@
+// Orders
+.my-orders {
+
+    &__title {
+		font-size: 34px;
+		line-height: 52px;
+		font-weight: map-get($font-weights, 'bold');
+		font-family: $font-secondary;
+		color: $black-3;
+		margin-bottom: 45px;
+		display: flex; align-items: center;
+
+		// Mobile
+		@include respond-to('md') {
+			font-size: 22px;
+			line-height: 34px;
+		}
+	}
+
+	&__title-icon {
+		margin-right: 12px;
+
+		// Mobile
+		@include respond-to('md') {
+			max-width: 28px;
+		}
+	}
+
+	&__empty {
+		font-size: 18px;
+		line-height: 24px;
+		font-family: $font;
+		color: $grey-3;
+		border-top: 1px solid rgba($black, .1);
+		padding: 24px 0;
+	}
+
+	.shop_table {
+		border: none !important;
+		margin-bottom: 0 !important;
+
+		&__container {
+			position: relative;
+		}
+
+		tr {
+
+			&.multiple-products {
+				td {
+					vertical-align: top;
+				}
+			}
+
+			th {
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: map-get($font-weights, 'medium');
+				color: $grey-3;
+				padding: 13px 0;
+			}
+
+			td {
+				width: 14.2%;
+				padding: 34px 20px 34px 0;
+
+				&.order-products {
+					width: 18.4%;
+
+					p {
+						margin-bottom: 32px;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&.order-number-code,
+				&.order-discount-code,
+				&.order-cuit  {
+					font-size: 20px;
+					color: $black-3;
+				}
+
+				&.order-number-code {
+					width: 10%;
+				}
+
+				&.order-discount-code {
+					width: 18.4%;
+				}
+
+				&.order-discount {
+					width: 10%;
+
+					p {
+						margin-bottom: 32px;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+
+				&.order-delete {
+
+					.trash {
+						border: none;
+					}
+				}
+
+				p,
+				time {
+					font-size: 20px;
+					line-height: 27px;
+					color: $black-3;
+				}
+
+				.orders-table__product-name {
+					font-weight: map-get($font-weights, 'semi-bold');
+				}
+
+				.orders-table__presentation {
+					font-size: 14px;
+					line-height: 26px;
+					color: $grey-3;
+					margin-bottom: 16px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		// Mobile
+		@include respond-to('md') {
+			tbody {
+				tr {
+					margin-bottom: 24px;
+					display: flex; flex-wrap: wrap;
+
+					td {
+						width: initial;
+						text-align: left !important;
+						font-size: 16px !important;
+						padding: 12px 24px;
+
+						&::before {
+							float: none;
+							display: block;
+							color: $grey-3;
+							margin-bottom: 9px;
+						}
+
+						p {
+							font-size: 16px;
+							color: $grey-3;
+						}
+					}
+
+					.order-number-code {
+						position: relative;
+						background-color: $grey-7 !important;
+						width: 100%;
+						border-radius: 5px;
+						padding: 24px;
+						transition: $global-transition;
+
+						&::before {
+							display: initial;
+						}
+
+						&::after {
+							content: url(../img/icons/arrow-down--blue.svg);
+							position: absolute; top: 50%; right: 24px;
+							transform: translateY(-50%);
+							width:28px; height: 28px;
+							background-color: $white;
+							border-radius: 50%;
+							display: flex; justify-content: center; align-items: center;
+						}
+					}
+
+					.order-quantity,
+					.order-products,
+					.order-cuit,
+					.order-discount-code,
+					.order-discount,
+					.order-date,
+					.order-delete {
+						display: none;
+					}
+
+					.order-cuit {
+						width: 100%;
+					}
+
+					.order-discount-code {
+						width: 100%;
+					}
+
+					.order-products {
+						width: 70%;
+						order: 2;
+
+						p {
+							margin-bottom: 0;
+						}
+
+						.orders-table__quantity {
+							margin-bottom: 15px;
+						}
+					}
+					.order-discount {
+						width: 30%;
+						order: 3;
+
+						&::before {
+							content: 'Descuento';
+						}
+
+						p {
+							margin-bottom: 69px;
+						}
+					}
+
+					.order-delete {
+						order: 5;
+						width: 100%;
+
+						&::before {
+							display: none;
+						}
+
+						.trash {
+							margin: 0 auto;
+						}
+					}
+
+					&.active {
+
+						.order-number-code {
+							background-color: $blue !important;
+							color: $white;
+							transition: $global-transition;
+
+							&::before {
+								color: $white;
+							}
+
+							&::after {
+								content: url(../img/icons/arrow-up--blue.svg);
+							}
+						}
+
+						.order-products,
+						.order-cuit,
+						.order-discount-code,
+						.order-discount,
+						.order-delete {
+							display: block;
+						}
+	
+					}
+				}
+			}
+
+		}
+	}
+}
+.woocommerce-orders-table {
+  padding-top: 100px;
+}

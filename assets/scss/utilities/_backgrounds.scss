@@ -1,0 +1,27 @@
+$utilities__backgrounds__colors: $background-colors;
+
+$utilities__backgrounds__text__colors: $background-font-colors;
+
+.background{
+	background: transparent 50% 50% no-repeat;
+	background-size: cover;
+
+	@each $name, $color in $utilities__backgrounds__colors{
+		&.background--#{$name}{
+			&.background--full{
+				background-color: $color;
+				color: map-get( $utilities__backgrounds__text__colors, $name );
+			}
+			&.background--top {
+				background-image: linear-gradient( to bottom, $color 0, $color 50%, transparent 50%, transparent 100% );
+			}
+			&.background--bottom {
+				background-image: linear-gradient( to bottom, transparent 0, transparent 50%, $color 50%, $color 100% );
+			}
+			&.background--centered {
+				background-image: linear-gradient( to bottom, transparent 0, transparent 25%, $color 25%, $color 75%, transparent 75%, transparent 100% );
+			}
+		}
+	}
+
+}

@@ -1,0 +1,65 @@
+// Plus
+.plus {
+  font-weight: map-get($font-weights, 'regular');
+  font-family: $font;
+  font-size: 18px;
+  line-height: 27px;
+  color: $blue;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+  margin-top: 18px;
+
+  &:before {
+    content: url(../img/icons/plus.svg);
+    margin-right: 8px;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+// Trash
+.trash {    
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  width: 50px; height: 48px;
+  border: 1px solid $alert;
+  border-radius: 10px;
+
+  &::before,
+  &::after {
+    position: absolute; 
+  }
+
+  &::before {
+    content: url(../img/icons/trash-lid.svg);
+    bottom: 24px; left: 13px;
+    transition: $global-transition;
+  }
+
+  &::after {
+    content: url(../img/icons/trash-body.svg);
+    bottom: 9px; left: 14px;
+  }
+
+  &:hover {
+    &::before {
+      transform: translate(-1px, -2px) rotate(-15deg);
+      transition: $global-transition;
+    }
+  }
+}
+
+// Error Row
+.error-input-row {
+  &:after {
+    margin-top: 8px;
+    content: 'Campo Obligatorio' !important;
+    color: $alert;
+  }
+}

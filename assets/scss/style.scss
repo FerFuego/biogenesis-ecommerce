@@ -1,0 +1,88 @@
+/*!
+Theme Name: st-music-park
+Theme URI: http://underscores.me/
+Author: wcanvas
+Author URI: http://underscores.me/
+Description: Custom theme developed for S&T Bank\'s Music Park
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: st-music-park
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+st-music-park is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Reset
+# Grid
+# Elements
+# Components
+# Modules
+# Utilities
+--------------------------------------------------------------*/
+@import "vars";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Reset
+--------------------------------------------------------------*/
+@import "reset";
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+@import "fonts";
+
+/*--------------------------------------------------------------
+# Grid
+# https://getbootstrap.com/docs/4.0/getting-started/theming/
+# Look in node_modules/bootstrap/scss/_variables.scss for available variables to control grid
+--------------------------------------------------------------*/
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/all";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/all";
+
+/*--------------------------------------------------------------
+# Vendor
+--------------------------------------------------------------*/
+@import "vendor/magnific";
+@import "vendor/select2";
+
+/*--------------------------------------------------------------
+# Templates
+--------------------------------------------------------------*/
+@import "templates/all";
+
+/*--------------------------------------------------------------
+# Modules
+--------------------------------------------------------------*/
+@import "modules/all";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/all";
+@import "../../node_modules/bootstrap/scss/utilities/display";
+
+/*--------------------------------------------------------------
+# WooComerce
+--------------------------------------------------------------*/
+@import "woocomerce/all";

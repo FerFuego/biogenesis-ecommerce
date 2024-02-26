@@ -1,0 +1,209 @@
+.footer {
+  background-color: $blue-3;
+
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 0 30px;
+
+    // Mobile
+    @include respond-to(md) {
+      flex-direction: column;
+      padding: 24px 0 60px;
+    }
+  }
+
+  &__logo-container {
+
+    // Mobile
+    @include respond-to(md) {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__logo {
+    max-width: 200px !important;
+
+    // Mobile
+    @include respond-to('md') {
+      max-width: 160px !important;
+    }
+    @include respond-to('sm') {
+      max-width: 120px !important;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Mobile
+    @include respond-to(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__menu {
+    margin-right: 45px;
+
+    // Mobile
+    @include respond-to(md) {
+      margin-right: initial;
+      margin-bottom: 48px;
+    }
+  }
+
+  &__menu-container {
+    .menu {
+      li {
+        margin-left: 0;
+        margin-bottom: 2px;
+
+        // Mobile
+        @include respond-to('md') {
+          text-align: center;
+        }
+
+        a {
+          font-family: $font;
+          font-weight: map-get($font-weights, 'regular');
+          font-size: 16px;
+          line-height: 30px;
+          color: $white;
+
+          &:hover {
+            opacity: .5;
+          }
+
+          // Mobile
+          @include respond-to('md') {
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+      }
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 18px;
+
+    // Mobile
+    @include respond-to(md) {
+      justify-content: center;
+      margin-top: 42px;
+    }
+
+    a {
+      display: block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid $grey-2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 9px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      img {
+        max-width: 15px;
+        max-height: 15px;
+      }
+    }
+  }
+
+  &__contact {
+    max-width: 300px;
+
+    // Mobile
+    @include respond-to('md') {
+      max-width: none;
+    }
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 31px;
+    color: $white;
+    margin-bottom: 13px;
+
+    // Mobile
+    @include respond-to('md') {
+      display: none;
+      /*font-size: 18px;
+      line-height: 28px;
+      text-align: center;*/
+    }
+  }
+
+  &__copy {
+    display: block;
+    font-family: $font;
+    font-weight: map-get($font-weights, 'regular');
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+    padding-left: 22px;
+
+    // Mobile
+    @include respond-to('md') {
+      text-align: center;
+      padding-left: 0;
+    }
+    @include respond-to('sm') {
+      font-size: 14px;
+    }
+
+    &--address {
+      position: relative;
+      margin-bottom: 10px !important;
+
+      &::before {
+        content: url(../img/icons/address.svg);
+        position: absolute; top: 0; left: 0;
+
+        // Mobile
+        @include respond-to('md') {
+          display: none;
+        }
+      }
+    }
+  }
+
+  a.footer__copy {
+    &:hover {
+      color: $white;
+      opacity: .5;
+    }
+  }
+
+  &__copyright {
+    position: absolute; bottom: 30px; left: 10px;
+    font-family: $font;
+    font-weight: map-get($font-weights, 'regular');
+    font-size: 12px;
+    line-height: 16px;
+    text-align: left;
+    color: $white;
+
+    // Mobile
+    @include respond-to('md') {
+      bottom: 15px; left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

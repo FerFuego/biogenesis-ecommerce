@@ -1,0 +1,13 @@
+.go-back {
+  font-family: $font;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: $grey-3;
+  display: flex;
+  align-items: center;
+
+  img {
+    display: inline-block;
+    margin-right: 13px;
+  }
+}

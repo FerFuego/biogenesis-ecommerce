@@ -1,0 +1,51 @@
+ul, ol {
+	line-height: 1;
+	margin: rem-calc( 0 0 16 0);
+	padding: 0;
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+
+	li{
+		position: relative;
+		margin: rem-calc( 0 0 10 16 );
+
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: rem-calc( 16 );
+}
+
+nav{
+	ul,ol{
+		list-style-type: none;
+	}
+
+	li{
+		margin-left: 0;
+
+		&:before{
+			content: none;
+		}
+	}
+}
+
+dt {
+	font-weight: map-get( $font-weights, 'bold' );
+}
+
+dd {
+	margin: rem-calc( 0 16 16 16 );
+}

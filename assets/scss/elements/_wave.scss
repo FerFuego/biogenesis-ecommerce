@@ -1,0 +1,20 @@
+.wave {
+    position: absolute;
+    bottom: -2px; left: -30px;
+	width: 112%;
+	max-width: none !important;
+	
+	// Mobile
+	@include respond-to('md') {
+		display: none;
+	}
+
+    &--mobile {
+		display: none;
+		
+		// Mobile
+		@include respond-to('md') {
+			display: block;
+		}
+    }
+}

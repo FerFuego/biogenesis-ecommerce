@@ -1,0 +1,139 @@
+.single_add_to_cart_button {
+    background-color: $blue !important;
+    border-radius: 50px !important;
+    padding: 15px 33px !important;
+    font-size: 17px !important;
+    letter-spacing: .2px !important;
+    line-height: 25px !important;
+    font-weight: map-get($font-weights, 'semi-bold') !important;
+}
+
+form {
+
+    &.cart {
+        display: flex; flex-wrap: wrap; align-items: flex-end;
+    }
+
+    .woocommerce-variation-add-to-cart {
+        display: flex; align-items: flex-end;
+
+        // Mobile
+        @include respond-to('sm') {
+            flex-wrap: wrap; 
+        }
+    }
+
+    .woocommerce-variation-availability {
+        display: none;
+    }
+}
+
+table {
+    &.variations {
+        tr {
+            display: flex; flex-wrap: wrap;
+        }
+        .label {
+            width: 100%;
+        }
+    }
+}
+
+.quantity {
+    display: flex; flex-wrap: wrap;
+    max-width: 200px;
+
+    // Mobile
+    @include respond-to('sm') {
+        justify-content: center;
+        margin-right: 0 !important; margin-bottom: 20px;
+    }
+
+    label {
+        clip: auto !important; clip-path: none !important;
+        position: relative !important;
+        width: 100% !important; height: max-content;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: map-get($font-weights, 'bold');
+    }
+    
+    input {
+        width: 145px !important; height: 55px;
+        border: 1px solid map-get($greys, 'light');
+        border-radius: 10px;
+        margin-right: 25px;
+        font-size: 20px;
+        font-family: $font;
+
+        // Mobile
+        @include respond-to('md') {
+            width: 90px !important; height: 43px;
+        }
+        @include respond-to('sm') {
+            margin-right: 0;
+        }
+    }
+}
+
+.progress-bar {
+    grid-area: progress-bar;
+
+    &__header {
+        display: flex; justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    &__discount,
+    &__max-discount {
+        font-family: $font;
+        color: $blue;
+    }
+
+    &__discount {
+        font-weight: map-get($font-weights, 'semi-bold');
+    }
+
+    &__bar {
+        width: 100%; height: 10px;
+        border-radius: 15px;
+        background-color: rgba($blue, .2);
+        overflow: hidden;    
+
+        // Finished Campaign
+        &--finished {
+            background-color: rgba(200, 200, 200, 0.2);
+        }
+    }
+
+    &__progress {
+        width: 50%; height: 100%;
+        background-color: $blue; 
+
+        &--finished {
+            background-color: #C6C6C6;;
+        }
+    }
+
+    // Single Product (Mobile)
+    &--mobile {
+        padding-right: 15px;
+        margin-bottom: 32px;
+        max-width: 290px;
+
+        // Mobile
+        @include respond-above('md') {
+            display: none;
+        }
+    }
+}
+
+.woocommerce-product-gallery {
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        background-color: transparent;
+    }
+}

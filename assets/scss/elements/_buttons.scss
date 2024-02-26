@@ -1,0 +1,171 @@
+$element__button__percentage: 10% !default;
+$element__button__border__color: transparent !default;
+$element__button__border__width: 1px !default;
+$element__button__background__color: $primary !default;
+$element__button__background__color__hover: lighten( $element__button__background__color, $element__button__percentage ) !default;
+$element__button__background__color__focus: lighten( $element__button__background__color, $element__button__percentage ) !default;
+$element__button__transition: $global-transition !default;
+$element__button__border__radius: 0px !default;
+$element__button__font__size: rem-calc( 16 ) !default;
+$element__button__padding: rem-calc( 16 32 ) !default;
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+	appearance: none !important;
+	font-family: $font;
+	font-weight: map-get( $font-weights, 'semi-bold' );
+	font-size: 17px;
+	line-height: 25px;
+	letter-spacing: 0.2px;
+	color: $white;
+	background-color: $blue;
+	border-radius: 50px;
+	padding: 15px 33px;
+	max-width: max-content;
+	height: max-content;
+	display: inline-block;
+	cursor: pointer;
+	
+	&:hover {
+		color: $white;
+		background: lighten( $element__button__background__color, $element__button__percentage )
+	}
+
+	&:active,
+	&:focus {
+		border-color: transparent;
+		outline: none;
+	}
+
+	@each $name, $color in $button-colors{
+		&.button--#{$name}{
+			background-color: $color;
+			background: lighten( $color, $element__button__percentage )
+		}
+	}
+}
+
+.button {
+
+	&--secondary-state {
+		position: relative;
+		border: 1px solid $blue-2;
+		background-color: $blue-2;
+		transition: $global-transition;
+		z-index: 1;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $blue;
+			width: 100%; height: 100%;
+			transform: translateX(-110%) skew(-25deg);
+			transition: all .3s linear;
+			z-index: -1;
+		}
+
+		&:hover {
+			background-color: $blue;
+			border: 1px solid $blue;
+			color: $white;
+			transition: all .3s linear;
+
+			&::before {
+				transform: translateX(0%) skew(-25deg) scale(1.05);
+			}
+		}
+	}
+
+	&--outline{
+		position: relative;
+		background-color: transparent;
+		border: 1px solid $blue;
+		color: $blue;
+		line-height: 25px;
+		padding: 20px 33px;
+		z-index: 1;
+		overflow: hidden;
+		transition: $global-transition;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $blue;
+			width: 100%;
+			height: 100%;
+			transform: translateX(-110%) skew(-25deg);
+			transition: all .3s linear;
+			z-index: -1;
+		}
+
+		&:hover {
+			border: 1px solid $blue;
+			color: $white;
+			transition: $global-transition;
+			background-color: $blue;
+
+			&::before {
+				transform: translateX(0%) skew(-25deg) scale(1.05);
+			}
+		}
+
+		// Border Black
+		&.black {
+			border: 1px solid $black-5;
+			color: $black-5;
+
+			&::before {
+				background-color: $blue;
+			}
+			
+			&:hover {
+				border: 1px solid $blue;
+				color: $white;
+				background-color: $white;
+			}
+		}
+
+		&.white {
+			background-color: transparent;
+			border: 1px solid $white;
+			color: $white;
+
+			&::before {
+				background-color: $white;
+			}
+
+			&:hover{
+				background-color: $white;
+				color: $blue;
+			}
+		}
+
+		@each $name, $color in $button-colors{
+
+			&.button--#{$name}{
+				background: $white;
+				border: $element__button__border__width solid $color;
+				color: $color;
+				&:hover{
+					color: $color;
+				}
+			}
+
+		}
+	}
+
+	&.disabled {
+		opacity: .4;
+		background: initial;
+		color: initial;
+		cursor: no-drop;
+	}
+}

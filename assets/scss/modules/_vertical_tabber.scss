@@ -1,0 +1,107 @@
+.module--vertical_tabber{
+
+	.prehead{
+
+	}
+
+	.title{
+
+	}
+
+	.wysiwyg{
+		p{
+			@extend .wysiwyg--ptag;
+		}
+	}
+
+	.prehead + .title{
+
+	}
+
+	.vertical-tabs{
+
+		.mobile-button-container{
+			overflow-x: scroll;
+			-ms-overflow-style: none;
+		}
+
+		.tab-buttons{
+			position: relative;
+			margin-bottom: rem-calc( 51 );
+
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+
+			@include respond-above( 'md' ){
+				margin-bottom: rem-calc( 0 );
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				border-right: 1px solid rgba( $white, .3 );
+			}
+		}
+
+		.vertical-tab-button{
+			color: $black;
+			opacity: 0.6;
+			font-family: map-get( $font-weights, 'regular' );
+			font-size: rem-calc( 16 );
+			letter-spacing: 0;
+			padding: 0;
+			background: none;
+			border: none;
+			justify-content: flex-start;
+			text-align: left;
+
+			margin-right: rem-calc( 30 );
+			flex: 0 0 auto;
+
+			@include respond-above( 'md' ){
+				width: 100%;
+				margin-right: rem-calc( 0 );
+				margin-bottom: rem-calc( 30 );
+			}
+
+			&:hover,
+			&:focus{
+				opacity: 1;
+			}
+
+			&[aria-selected="true"] {
+				opacity: 1;
+			}
+		}
+
+		.panel-container{
+		}
+
+		&.js-active{
+			.panel-container{
+				position: relative;
+				transition: $global-transition;
+				width: 100%;
+
+				.vertical-tab-panel{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					outline: 0;
+
+					transition: $global-transition;
+					transform: translateX( 0 );
+					opacity: 1;
+
+					&.transition{
+						transition: $global-transition;
+						transform: translateX( 100px );
+						opacity: 0;
+					}
+
+				}
+
+			}
+		}
+	}
+
+}

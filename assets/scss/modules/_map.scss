@@ -1,0 +1,69 @@
+.map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+  }
+
+  &__message {
+    width: 100%;
+    padding: 22px 35px;
+    background: rgba(0, 65, 103, 0.65);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 0px 0px 10px 10px;
+    opacity: 0;
+    transition: all .3s ease;
+
+    @include respond-to(md) {
+      padding: 20px 14px;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__message-copy {
+    font-family: $font;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: map-get($font-weights, 'semi-bold');
+    color: $white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+
+    @include respond-to(md) {
+      line-height: 17px;
+    }
+
+
+    &--address {
+      &:before {
+        content: url(../img/icons/marker-white.svg);
+        margin-right: 11px;
+      }
+    }
+
+    &--opening-hours {
+      &:before {
+        content: url(../img/icons/clock.svg);
+        margin-right: 11px;
+      }
+    }
+  }
+}
+
+.woocommerce-checkout {
+
+  .map {
+    pointer-events: none;
+  }
+}

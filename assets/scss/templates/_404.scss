@@ -1,0 +1,92 @@
+.error-404 {
+    margin-top: $header-height;
+
+    &__container {
+        padding-top: 100px; padding-bottom: 385px;
+        display: flex; flex-wrap: wrap; justify-content: center;
+
+        // Mobile
+        @include respond-to('md') {
+            padding-top: 80px; padding-bottom: 170px;
+        }
+    }
+
+    &__icon-container {
+        display: flex; justify-content: center;
+        margin-bottom: 54px;
+
+        // Mobile
+        @include respond-to('md') {
+            margin-bottom: 32px;
+        }
+
+        img {
+            max-width: 75.5px;
+
+            // Mobile
+            @include respond-to('md') {
+                max-width: 61px;
+            }
+        }
+    }
+
+    &__title-container {
+        max-width: 812px;
+    }
+
+    &__title {
+        font-size: 45px;
+        line-height: 68px;
+        font-family: $font-secondary;
+        font-weight: map-get($font-weights, 'bold');
+        color: $grey-3;
+        text-align: center;
+        margin-bottom: 14px;
+
+        // Mobile
+        @include respond-to('md') {
+            font-size: 24px;
+            line-height: 31px;
+            margin-bottom: 16px;
+        }
+        @include respond-to('sm') {
+            max-width: 320px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 30px;
+        line-height: 45px;
+        font-family: $font-secondary;
+        color: $grey-9;
+        text-align: center;
+        margin-bottom: 44px;
+
+        // Mobile
+        @include respond-to('md') {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 56px;
+        }
+        @include respond-to('sm') {
+            max-width: 190px;
+            margin: 0 auto 44px;
+        }
+    }
+
+    &__button {
+        background-color: $blue-2 !important;
+        border: 1px solid $blue-2;
+        padding: 20px 32px;
+        min-width: 234px;
+        text-align: center;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: $white !important;
+            color: $blue-2 !important;
+            border: 1px solid $blue-2;
+        }
+    }
+}

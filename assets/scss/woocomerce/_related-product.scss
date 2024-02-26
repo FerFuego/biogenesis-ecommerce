@@ -1,0 +1,169 @@
+.related-products {
+    background-color: $white;
+    display: flex; flex-wrap: wrap; 
+    padding-bottom: 90px;
+
+    // Mobile
+    @include respond-to('md') {
+        padding: 0;
+    }
+
+    &.no-slider {
+
+        .related-products__slider {
+            display: flex; justify-content: center;
+            width: 100%;
+        }
+        #js-slick-prev-arrow,
+        #js-slick-next-arrow {
+            display: none;
+        }
+
+    }
+
+    &__container {
+        position: relative;
+        display: flex; flex-wrap: wrap; justify-content: center;
+
+        // Mobile
+        @include respond-to('sm') {
+            justify-content: flex-start;
+        }
+    }
+
+    &__title {
+
+        // Mobile
+        @include respond-to('md') {
+            font-size: 20px;
+            line-height: 30px;
+            margin-left: 10px;
+        }
+    }
+
+    .card-product {
+        background-color: map-get($background-colors, 'gray');
+        width: 25%;
+        margin: 0 10px;
+        transition: .1s;
+
+        &:hover {
+          box-shadow: 0 1px 15px rgba($black, .1);
+          transform: scale(1.01) !important;
+          transition: .1s;
+        }
+    
+    }
+
+    &__slider {
+        width: 94%;
+
+        // Mobile
+        @include respond-to('sm') {
+            width: 100%;
+        }
+    }
+
+    .slick-list {
+        overflow: hidden;
+    }
+
+    .slick-track {
+        display: flex;
+        padding: 20px 0;
+    }
+
+    .slick-slide {
+        outline: none;
+    }
+
+    .slick-prev,
+    .slick-next {
+        position: absolute; top: 50%; 
+        transform: translateY(-50%);
+        height: 40px; width: 40px;
+
+        // Mobile
+        @include respond-to('sm') {
+            display: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover::before,
+        &:hover::after {
+            background-color: map-get($greys, 'dark');
+            transition: $global-transition;
+        }
+        
+        &::before,
+        &::after {
+            content: '';
+            position: absolute; left: 9px;
+            width: 20px; height: 2px;
+            background-color: map-get($greys, 'light');
+            transition: $global-transition;
+        }
+        &::before {
+            top: 13px;
+        }
+        &::after {
+            top: 27px;
+        }
+    }
+    .slick-prev {
+        left: 0;
+        &::before {
+            transform: rotate(-50deg);
+        }
+        &::after {
+            transform: rotate(50deg);
+        }
+    }
+    .slick-next {
+        right: 0;
+        &::before {
+            transform: rotate(50deg);
+        }
+        &::after {
+            transform: rotate(-50deg);
+        }
+    }
+    .slick-disabled {
+        opacity: 0;
+        transition: $global-transition;
+    }
+    .slick-hidden {
+        display: none;
+    }
+    
+    .slick-dots {
+        display: flex; justify-content: center;
+        margin-top: 58px;
+
+        // Mobile
+        @include respond-to('md') {
+            margin: 32px 0;
+        }
+        
+        li {
+            button {
+                width: 15px; max-width: none; height: 15px;
+                background-color: transparent;
+                border: 1px solid $blue;
+                border-radius: 50% !important;
+                color: transparent;
+                padding: 0 !important;
+                transition: $global-transition;
+            }
+            
+            &.slick-active {
+                button {
+                    background-color: $blue;
+                    transition: $global-transition;
+                }
+            }
+        }
+    }
+}

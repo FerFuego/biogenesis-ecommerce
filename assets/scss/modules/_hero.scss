@@ -1,0 +1,57 @@
+.hero {
+  position: relative;
+  background-position: center top;
+  background-size: cover;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+
+  // Mobile
+  @include respond-to('md') {
+    min-height: 520px;
+  }
+
+  &__container {
+    padding-top: 50px;
+    padding-bottom: 50px; 
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 812px;
+  }
+
+  &__subtitle {
+    font-size: 17px;
+    font-family: $font;
+    font-weight: map-get($font-weights, 'semi-bold');
+    line-height: 25.5px;
+    color: $white-2;
+    margin-bottom: 44px;
+    max-width: 670px;
+
+    // Mobile
+    @include respond-to('sm') {
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .bb-marca {
+    position: absolute; bottom: 90px; right: 0;
+
+    // Mobile
+    @include respond-to('sm') {
+      bottom: 50px;
+      max-width: 84px; max-height: 36px;
+    }
+  }
+  .button--secondary-state {
+    height: auto;
+    min-height: 57px;
+  }
+}

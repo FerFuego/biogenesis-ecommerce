@@ -1,0 +1,313 @@
+.cancel-modal,
+.confirmation,
+.success-checkout,
+.recovery,
+.recovery-success,
+.max-limit,
+.delete-profile,
+.new-campaign-banner {
+    display: none;
+
+    &.active {
+        display: flex; justify-content: center; align-items: center;
+        position: fixed; top: 0; left: 0; z-index: 1000;
+        width: 100vw; height: 100vh;
+        background-color: rgba($black, .6);
+    }
+
+    &__container {
+        position: relative;
+        max-width: 640px; max-height: 700px;
+        background-color: $white;
+        border-radius: 25px;
+        padding: 60px;
+        box-shadow: 0px 4px 4px rgba($black, .25);
+
+        // Mobile
+        @include respond-to('sm') {
+            margin: 0 15px;
+            padding: 58px 16px;
+        }
+
+        &--lg {
+            max-width: 1000px;
+
+            // Mobile
+            @include respond-to('md') {
+                max-width: 95%;
+            }
+        }
+    }
+
+    &__icon-container {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__title-container {
+        display: flex; justify-content: center;
+    }
+
+    &__title {
+        font-size: 40px;
+        line-height: 46px;
+        font-family: $font-secondary;
+        font-weight: map-get($font-weights, 'medium');
+        text-align: center;
+        max-width: 520px;
+        color: $black-3;
+
+        // Mobile
+        @include respond-to('md') {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        &--lg {
+            max-width: none;
+        }
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: .2px;
+        font-weight: map-get($font-weights, 'regular');
+        font-family: $font;
+        text-align: center;
+        margin-top: 18px;
+        color: $black-3;
+
+        // Mobile
+        @include respond-to('sm') {
+            margin-top: 24px;
+        }
+
+        &--sm {
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+
+    &__bold {
+        font-weight: map-get($font-weights, 'bold');
+    }
+
+    .status {
+        margin-bottom: 12px;
+    }
+
+    &__btn-container {
+        display: flex; justify-content: center;
+        margin-top: 80px;
+
+        &--recovery {
+            margin-top: 62px;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        border: 1px solid $blue;
+        border-radius: 50px;
+        background-color: $white;
+        font-size: 17px;
+        line-height: 25px;
+        letter-spacing: .2px;
+        font-weight: map-get($font-weights, 'semi-bold');
+        color: $blue;
+        padding: 15px 24px;
+        margin-right: 22px;
+        z-index: 1;
+		overflow: hidden;
+        transition: $global-transition;
+
+        &::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $blue;
+			width: 100%;
+			height: 100%;
+			transform: translateX(-110%) skew(-25deg);
+			transition: all .3s linear;
+			z-index: -1;
+		}
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $blue;
+            color: $white;
+            border: 1px solid $blue;
+            transition: $global-transition;
+
+            &::before {
+				transform: translateX(0%) skew(-25deg) scale(1.05);
+			}
+        }
+
+        // Mobile
+        @include respond-to('sm') {
+            padding: 10px 24px;
+            margin-right: 0; margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &--gray {
+            border: 1px solid $black-3;
+            color: $black-3;
+
+            &::before {
+                background-color: $black-3;
+			}
+
+            &:hover {
+                background-color: $black-3 !important;
+                color: $white !important;
+                border: 1px solid $white !important;
+                transition: $global-transition;
+            }
+        }
+
+        &--inverted {
+            background-color: $blue;
+            color: $white;
+
+            &::before {
+                background-color: $white;
+            }
+
+            &:hover {
+                background-color: $white;
+                color: $blue;
+            }
+        }
+   }
+
+    &__social-plugin {
+        width: 100%;
+        display: flex; justify-content: center;
+        margin: 56px 0;
+
+        // Mobile
+        @include respond-to('md') {
+            margin: 40px 0 22px;
+        }
+
+        .mo-openid-app-icons {
+            p {
+                display: none;
+            }
+        }
+    
+    }
+
+
+    &__close-btn {
+        position: absolute; top: 20px; right: 20px;
+        width: 30px; height: 30px;
+        transition: $global-transition;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute; top: 15px; left: 4px;
+            width: 22px; height: 2px;
+            background-color: $grey-3;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+            transition: $global-transition;
+        }
+    }
+
+    form {
+        
+        input {
+            margin-bottom: 16px;
+            padding: 10px 27px;
+            border: 1px solid map-get($greys, 'light');
+            transition: $global-transition;
+
+            &:focus,
+            &:active {
+                outline: none;
+                border: 1px solid map-get($greys, 'dark');
+                transition: $global-transition;
+            }
+        }
+
+        .btn-container {
+            width: 100%;
+            display: flex; justify-content: center;
+            margin-top: 50px; margin-bottom: 35px;
+
+            // Mobile
+            @include respond-to('sm') {
+                margin-top: 40px; margin-bottom: 32px;
+            }
+
+            .submit_button {
+                font-size: 17px;
+                line-height: 25px;
+                letter-spacing: .2px;
+                font-weight: map-get($font-weights, 'semi-bold');
+                width: 234px; height: 65px; max-width: none !important;
+                margin-bottom: 0;
+
+                // Mobile
+                @include respond-to('sm') {
+                    font-size: 16px;
+                    line-height: 24px;
+                    width: 144px;
+                }
+            }
+        }
+
+        .lost {
+            display: block;
+            line-height: 25px;
+            color: $grey-4;
+
+            // Mobile
+            @include respond-above('md') {
+                text-decoration: underline;
+            }
+        }
+
+        .new {
+            font-size: 17px;
+            line-height: 25px;
+            font-weight: map-get($font-weights, 'bold');
+            color: $black-3;
+            display: block;
+            text-align: center;
+
+            // Mobile
+            @include respond-to('sm') {
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            span {
+                color: $blue;
+                margin-left: 8px;
+            }
+        }
+    }
+}
